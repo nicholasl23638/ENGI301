@@ -55,6 +55,7 @@ Error conditions:
 # NOTE - Add import statements to allow access to Python library functions
 # NOTE - Hint:  Look at  https://docs.python.org/3/library/operator.html
 import operator
+import sys
 # ------------------------------------------------------------------------
 # Constants
 # ------------------------------------------------------------------------
@@ -71,7 +72,11 @@ operators = {
     "+" : operator.add,
     "-" : operator.sub,
     "*" : operator.mul,
-    "/" : operator.truediv
+    "/" : operator.truediv,
+    "**" : operator.pow,
+    "%" : operator.mod,
+    ">>" : operator.rshift,
+    "<<" : operator.lshift
 }
 
 
@@ -85,14 +90,24 @@ def get_user_input():
         Returns tuple:  (number, number, function) or 
                         (None, None, None) if inputs invalid
     """
+    
     # NOTE - Use "try"/"except" statements to allow code to handle errors gracefully.      
     try:
         # NOTE - Use "pass" statements to allow code to be run without having to 
         # NOTE - fill out the contents.  This pass statement should be removed    
         number1 = float(input("Enter First Number: "))
         number2 = float(input("Enter Second Number: "))
-        op = input("Enter Function: ")
-        
+
+        # determine which method to use based on running python version
+        if(str(sys.version)[0] == '3'):
+            op = input("Enter Function: ")
+        else:
+            op = raw_input("Enter Function: ")
+
+        # Truncate floating numbers for bit operations
+        if (op == ">>" or op == "<<"):
+            number1 = int(number1)
+            number2 = int(number2)
         
         # NOTE - User input is generally returned as a string and must be translated.
         func = operators.get(op)
