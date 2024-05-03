@@ -17,6 +17,7 @@ bash -c 'python3 timer.py' &
 exit 0
 
 <h2>Dependencies</h2>
+
 RPi.GPIO (pip install RPi.GPIO)
 time
 contents of 'python' folder
