@@ -23,13 +23,13 @@ contents of 'python' folder
 
 <h2>Pins & Communication Protocols</h2>
 Digital IO:
-P2_2 - UI Button
-P2_3 - Limit switch
-P2_1 - Left motor power
-P2_19 - Left motor polarity
-P2_18 - Right motor power
-P1_36 - Right motor polarity
+- P2_2 -> UI Button
+- P2_3 -> Limit switch
+- P2_1 -> Left motor power
+- P2_19 -> Left motor polarity
+- P2_18 -> Right motor power
+- P1_36 -> Right motor polarity
 
 I2C:
-P2_9 – Hex Display SCL
-P2_11 – Hex Display SDA
+- P2_9 –> Hex Display SCL
+- P2_11 –> Hex Display SDA
