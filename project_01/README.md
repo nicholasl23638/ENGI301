@@ -22,6 +22,7 @@ time
 contents of 'python' folder
 
 <h2>Pins & Communication Protocols</h2>
+
 Digital IO:
 - P2_2 –> UI Button
 - P2_3 –> Limit switch
